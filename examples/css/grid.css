@@ -1,0 +1,248 @@
+﻿/* Nested Div Rows and Columns dynamic size */
+/* #region GridRoot */
+div.GridRoot {
+    /*overflow-y: scroll;*/
+    font-size: 0.9rem;
+    display: table;
+    width: auto;
+}
+
+    div.GridRoot > div:first-child {
+        font-weight: bold;
+        font-size: 1rem;
+        color: darkslategray;
+        background-color: rgba(125, 125, 125, 0.02);
+    }
+
+    div.GridRoot > div {
+        display: table-row;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+        div.GridRoot > div:hover {
+            /*font-weight: bold;*/
+            color: var(--umcdarkgreen);
+            background-color: var(--grid-row-hover-bg) !important;
+        }
+
+        div.GridRoot > div:nth-child(odd) {
+            background-color: rgba(125, 125, 125, 0.02);
+        }
+
+        div.GridRoot > div > div {
+            /*padding: 0.5rem;*/
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0.6rem;
+            /*border: 1px solid rgba(0, 0, 0, 0.06);*/
+            border-right: 1px solid #f1f1f1;
+        }
+
+            /* https://css-tricks.com/css-content/ */
+            div.GridRoot > div > div.asc:after {
+                content: " \2191";
+                /* background-color: yellow; */
+            }
+
+            /* https://css-tricks.com/css-content/ */
+            div.GridRoot > div > div.desc:after {
+                content: " \2193";
+                /* background-color: yellow; */
+            }
+
+
+/* #endregion GridRoot */
+
+/* #region GridLinks: dynamic one dimensional Columns */
+div.GridLinks {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    column-gap: 0.5rem;
+    white-space: nowrap;
+}
+
+    div.GridLinks > div {
+        padding: 0.2rem;
+        align-self: center;
+    }
+/* #endregion GridLinks */
+
+/* #region GridInfo */
+/* Two Colums */
+div.GridInfo {
+    /*overflow-y: scroll;*/
+    font-size: 0.9rem;
+    display: table;
+    width: auto;
+}
+
+    div.GridInfo > div {
+        display: table-row;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+        div.GridInfo > div > div {
+            /*padding: 0.5rem;*/
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0.4rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+            div.GridInfo > div > div:first-child {
+                background-color: rgba(0, 0, 0, 0.01);
+                color: darkslategrey;
+            }
+/* #endregion GridInfo */
+
+/* #region GridSearch */
+/* Two rows  */
+div.GridSearch {
+    /*overflow-y: scroll;*/
+    font-size: 1rem;
+    font-weight: bold;
+    display: table;
+    width: auto;
+}
+
+    div.GridSearch > div {
+        display: table-row;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+        div.GridSearch > div > div {
+            /*padding: 0.5rem;*/
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0.4rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+            div.GridSearch > div > div > input {
+                font-size: 1rem;
+            }
+
+            div.GridSearch > div > div:nth-child(2n+1) {
+                background-color: rgba(0, 0, 0, 0.01);
+                color: darkslategrey;
+            }
+/* #endregion GridSearch */
+
+/* #region GridEdit */
+
+div.GridEdit {
+    display: table;
+    background-color: white;
+    border-spacing: 0rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+    div.GridEdit div {
+        /* border-spacing: 0.5rem; */
+        vertical-align: middle;
+    }
+
+        div.GridEdit div.b1 {
+            font-weight: bold;           
+            color: darkgreen;
+        }
+
+        div.GridEdit div.c1 {
+            font-size:0.9rem;
+            color: green;
+        }
+
+        div.GridEdit div.w1 {
+            width: 80px;
+        }
+
+        div.GridEdit div.w2 {
+            width: 125px;
+            font-size: x-small;
+        }
+
+        div.GridEdit div.i {
+            padding: 1rem;
+        }
+
+        div.GridEdit div.g1 {
+            font-size: 0.9rem;
+            color: gray;
+        }
+
+
+        div.GridEdit div.h {
+            padding: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.01);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: darkslategrey;
+        }
+        div.GridEdit div.s {
+            padding-left: 0.5rem;
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            color: darkslategrey;
+        }
+
+        div.GridEdit div.ta {
+            vertical-align: top;
+            max-width: 20rem;
+            max-height: 10rem;
+            resize: both;
+            /*overflow-y:auto;*/
+            white-space: pre-wrap;
+        }
+
+        div.GridEdit div.ta2 {
+            vertical-align: top;
+            max-width: 20rem;
+            max-height: 10rem;
+            overflow: auto;
+        }
+
+
+        div.GridEdit div[contenteditable*="true"] {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 0.5rem;
+        }
+
+    div.GridEdit > div {
+        display: table-row;
+    }
+
+        div.GridEdit > div > div {
+            display: table-cell;
+        }
+
+    div.GridEdit button {
+        padding: 1rem;
+        background-color: darkgray;
+    }
+
+div.GridEditX {
+    border-spacing: 0;
+}
+
+    div.GridEditX > div {
+        display: table-row;
+    }
+
+        div.GridEditX > div > div {
+            display: table-cell;
+        }    
+
+div.GridEditSave {
+    padding: .5rem;
+}
+
+/* #region GridEdit */
+
+
+div.rowedit > div {
+}
+
+div.rowedit > *[contenteditable="true"]:hover {
+    padding: 1rem;
+    background-color: rgba(217, 245, 255,0.5);
+}

@@ -1,0 +1,45 @@
+﻿* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+html {
+    zoom: 100%;       
+}
+
+body {
+    font-size: 11px; /* = 100% = 1rem */    
+    font-family: Helvetica, sans-serif;
+}
+
+#divTotal {
+    display: grid;
+    top: 0;
+    left: 0;
+    grid-template-rows: auto 1fr auto;    
+    height: 100vh;
+}
+
+#divHeader {    
+    background-color: none;
+    grid-column: span 3;
+    margin-left: 1rem;
+    margin-right: 1rem;   
+    padding-top: 1rem;
+    padding-bottom: 1rem;       
+    border-bottom: 1px solid #f8f5f5;
+}
+
+#divMain {
+    display: grid;   
+    grid-template-columns: auto 1fr
+}
+
+
+#divMain > div {
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
