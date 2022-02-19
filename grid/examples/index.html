@@ -4,11 +4,12 @@
     <title>ToTeeJee Grid Example</title>
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/grid.css" rel="stylesheet" />
+    <link href="css/data.css" rel="stylesheet" />
     <script src="../js/wasm_app.js"></script>
     <script src="../js/wasm_exec.js"></script>
     <script>
         (async function () {
-            const r = await modWASM.load("../wasm/toteejeev12.wasm", "totest");
+            const r = await modWASM.load("../wasm/toteejeev14.wasm", "totest");
             if (r == "ok") {
                 console.log("OK loading wasm");
                 togrid.init('gridIndex').then(console.log('Init ToJeeGrid Examples Grid'));
@@ -17,6 +18,15 @@
             }
         })();
     </script>
+    <style>
+        .asc:after {
+            content: " \2191";
+        }
+
+        .desc:after {
+            content: " \2193";
+        }
+    </style>
 </head>
 <body>
     <div id="divTotal">
@@ -40,6 +50,12 @@
                         <div>Basic table load</div>
                         <div>
                             <a href="javascript:toget.load('grid/examples/basic/tablesingle.html', 'divMainRight', this)">Basic table 4 level nested</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>Basic div load</div>
+                        <div>
+                            <a href="javascript:toget.load('grid/examples/basic/divsingle.html', 'divMainRight', this)">Basic div 4 level nested</a>
                         </div>
                     </div>
                 </div>
